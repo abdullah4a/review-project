@@ -1,15 +1,22 @@
 <template>
   <nav class="nav">
     <ul class="nav-bar">
-      <li class="nav-items">Home</li>
-      <li class="nav-items">About</li>
-      <li class="nav-items">Contact us</li>
+      <li class="nav-items" v-for="(menu, index) in titles" :key="index">
+        {{ menu }}
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    titles: {
+      type: Array,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
